@@ -59,7 +59,7 @@ public class ActivitySchedulerServiceImplTest {
 		Assert.assertEquals(15, activitySchedule.getTeams().get(0).getActivityCatalog().getActivityCount());
 		Assert.assertEquals(15, activitySchedule.getTeams().get(0).getActivityCatalog().getActivityCount());
 		Assert.assertEquals("Staff Motivation Presentation", activitySchedule.getTeams().get(0).getActivityCatalog().getActivity(0).getName());
-		activitySchedule.print();
+		System.out.println(activitySchedule.print());
 	}
 	
 	@Test(expected=SchedulerServiceException.class)
