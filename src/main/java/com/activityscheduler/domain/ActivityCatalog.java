@@ -3,15 +3,20 @@ package com.activityscheduler.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.management.ImmutableDescriptor;
+
+import com.google.common.annotations.GwtIncompatible;
+
 public class ActivityCatalog extends AbstractDomainObject {
 
 	private static final long serialVersionUID = 3471695252714607381L;
-	
-	List<Activity> activitiesList;
+
+	 List<Activity> activitiesList;
 
 	public ActivityCatalog() {
 		super();
 		activitiesList = new ArrayList<>();
+		addActivtiy("Staff Motivation Presentation", 15);
 	}
 
 	public List<Activity> getActivitiesList() {
@@ -28,6 +33,14 @@ public class ActivityCatalog extends AbstractDomainObject {
 		activitiesList.add(activity);
 
 		return activity;
+	}
+
+	public int getActivityCount() {
+		return activitiesList.size();
+	}
+
+	public Activity getActivity(int index) {
+		return activitiesList.get(index);
 	}
 
 }
