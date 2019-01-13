@@ -1,11 +1,20 @@
 package com.activityscheduler.domain;
 
+import java.time.LocalTime;
+
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 public class ActivityScheduleTest {
 
 	private ActivitySchedule activitySchedule;
+	private EventInfo eventInfo;
+	
+	@Before
+	public void before() {
+		eventInfo = new EventInfo(LocalTime.of(8, 0, 0), LocalTime.of(16, 0, 0), LocalTime.of(11, 0, 0));
+	}
 
 	@Test
 	public void testActivitySchedule_Constructor() {
@@ -14,6 +23,8 @@ public class ActivityScheduleTest {
 		Assert.assertNotNull(activitySchedule);
 		Assert.assertNotNull(activitySchedule.getId());
 		Assert.assertEquals(0, activitySchedule.getTeamCount());
+		
+		
 	}
 
 	@Test
@@ -21,7 +32,7 @@ public class ActivityScheduleTest {
 
 		String testTeamName = "Team 1";
 
-		Team team = new Team(testTeamName);
+		Team team = new Team(eventInfo);
 		activitySchedule = new ActivitySchedule();
 		activitySchedule.addTeam(team);
 
