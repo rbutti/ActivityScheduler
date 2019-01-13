@@ -9,8 +9,11 @@ import com.activityscheduler.domain.ActivitySchedule;
 import com.activityscheduler.domain.EventInfo;
 import com.activityscheduler.domain.Team;
 import com.activityscheduler.exception.ErrorCode;
+import com.activityscheduler.exception.SchedulerFacadeException;
 import com.activityscheduler.exception.SchedulerServiceException;
 import com.activityscheduler.exception.SchedulerStrategyException;
+import com.activityscheduler.facade.CatalogParserFacade;
+import com.activityscheduler.facade.impl.BeanIOCatalogParserFacadeImpl;
 import com.activityscheduler.service.ActivitySchedulerService;
 import com.activityscheduler.strategy.SchedulerStrategy;
 import com.activityscheduler.strategy.impl.DPSchedulerStrategy;
@@ -18,10 +21,12 @@ import com.activityscheduler.strategy.impl.DPSchedulerStrategy;
 public class ActivitySchedulerServiceImpl implements ActivitySchedulerService {
 
 	private SchedulerStrategy scheduler;
+	private CatalogParserFacade parserFacade;
 
 	public ActivitySchedulerServiceImpl() {
 		super();
 		this.scheduler = new DPSchedulerStrategy();
+		this.parserFacade = new BeanIOCatalogParserFacadeImpl();
 	}
 
 	@Override
@@ -30,7 +35,7 @@ public class ActivitySchedulerServiceImpl implements ActivitySchedulerService {
 
 		try {
 			ActivitySchedule schedule = new ActivitySchedule();
-			
+
 			while (activityCatalog.hasActivities()) {
 
 				Team team = new Team(eventInfo);
@@ -55,7 +60,20 @@ public class ActivitySchedulerServiceImpl implements ActivitySchedulerService {
 			throw new SchedulerServiceException("Failed to create a schedule with given input", strategyException,
 					ErrorCode.STRATEGY_ENGINE_ERROR);
 		} catch (Exception exception) {
-			throw new SchedulerServiceException("Failed to create a schedule with given input", exception,
+			throw new SchedulerServiceException("Unexpected error occured while generating schedule with given input",
+					exception, ErrorCode.UNEXPECTED_ERROR);
+		}
+	}
+
+	@Override
+	public ActivityCatalog parseActivityCatalog(String filePath) throws SchedulerServiceException {
+		try {
+			return parserFacade.parseActivityCatalog(filePath);
+		} catch (SchedulerFacadeException facadeException) {
+			throw new SchedulerServiceException("Failed to read activities from input file", facadeException,
+					ErrorCode.FACADE_ERROR);
+		} catch (Exception exception) {
+			throw new SchedulerServiceException("Unexpected Error occured while reading form the input file", exception,
 					ErrorCode.UNEXPECTED_ERROR);
 		}
 	}

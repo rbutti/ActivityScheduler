@@ -26,7 +26,8 @@ public class ActivityCatalogTest {
 		int testDuration = 10;
 
 		activityCatalog = new ActivityCatalog();
-		activityCatalog.addActivtiy(testName, testDuration);
+
+		activityCatalog.addActivity(new Activity(testDuration, testName));
 		Assert.assertNotNull(activityCatalog);
 		Assert.assertNotNull(activityCatalog.getActivities());
 		Assert.assertEquals(2, activityCatalog.getActivityCount());
@@ -42,7 +43,7 @@ public class ActivityCatalogTest {
 		int testDuration = 10;
 
 		activityCatalog = new ActivityCatalog();
-		activityCatalog.addActivity(testName, testDuration, true);
+		activityCatalog.addActivity(new Activity(testDuration, testName, true));
 		Assert.assertNotNull(activityCatalog);
 		Assert.assertNotNull(activityCatalog.getActivities());
 		Assert.assertEquals(2, activityCatalog.getActivityCount());

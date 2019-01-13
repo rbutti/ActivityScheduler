@@ -9,13 +9,20 @@
 	<description>The solution creates a schedule that includes different teams and their schedule of activities using input data of list of activities</description>
 
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven-jar-plugin-version>3.1.0</maven-jar-plugin-version>
 		<maven-compiler-plugin-version>3.8.0</maven-compiler-plugin-version>
 		<junit-version>4.12</junit-version>
-		<guava-version>19.0</guava-version>
+		<beanio.version>2.1.0</beanio.version>
+		<commons-io.version>2.5</commons-io.version>
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.7</version>
+		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -23,9 +30,14 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>${guava-version}</version>
+			<groupId>org.beanio</groupId>
+			<artifactId>beanio</artifactId>
+			<version>${beanio.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>${commons-io.version}</version>
 		</dependency>
 
 	</dependencies>

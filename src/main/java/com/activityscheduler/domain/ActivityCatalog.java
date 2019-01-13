@@ -32,16 +32,6 @@ public class ActivityCatalog extends AbstractDomainObject {
 		return this.activities.addAll(activities);
 	}
 
-	public boolean addActivtiy(String name, int duration) {
-		return addActivity(name, duration, false);
-	}
-
-	public boolean addActivity(String name, int duration, boolean isScheduled) {
-
-		Activity activity = new Activity(duration, name, isScheduled);
-		return addActivity(activity);
-	}
-
 	public boolean addActivity(Activity activity) {
 		return activities.add(activity);
 	}
