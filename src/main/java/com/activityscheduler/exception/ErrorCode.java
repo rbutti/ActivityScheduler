@@ -1,18 +1,18 @@
 package com.activityscheduler.exception;
 
 public enum ErrorCode {
-	UNEXPECTED_ERROR(001);
+	UNEXPECTED_ERROR("ERR001"),  STRATEGY_ENGINE_ERROR("ERR002");
 
 	// declaring private variable for getting values
-	private int code;
+	private String code;
 
 	// getter method
-	public int getCode() {
+	public String getCode() {
 		return this.code;
 	}
 
 	// enum constructor - cannot be public or protected
-	private ErrorCode(int code) {
+	private ErrorCode(String code) {
 		this.code = code;
 	}
 }

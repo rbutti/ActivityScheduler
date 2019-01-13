@@ -4,7 +4,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.activityscheduler.domain.Activity;
 import com.activityscheduler.domain.ActivityCatalog;
 import com.activityscheduler.exception.SchedulerStrategyException;
 import com.activityscheduler.strategy.SchedulerStrategy;
@@ -75,7 +74,7 @@ public class DPSchedulerStrategyTest {
 	@Test(expected = SchedulerStrategyException.class)
 	public void testScheduler_ScheduleForException() throws SchedulerStrategyException {
 		
-		inputActivities.setActivitiesList(null);
+		inputActivities.setActivities(null);
 		scheduler.schedule(inputActivities, 40);
 
 		Assert.fail("This method should throw exception and following line should not get executed");
