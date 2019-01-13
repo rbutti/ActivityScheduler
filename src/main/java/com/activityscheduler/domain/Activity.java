@@ -2,15 +2,22 @@ package com.activityscheduler.domain;
 
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.UUID;
 
 public class Activity extends AbstractDomainObject {
 
 	private static final long serialVersionUID = -7068428055267646238L;
 
-	private final int duration;
+	private  int duration;
 	private boolean scheduled;
-	private final String name;
+	private  String name;
 	private LocalTime startTime;
+	
+
+	public Activity() {
+		super();
+	}
+
 
 	public Activity(int duration, String name) {
 		super();
@@ -18,7 +25,7 @@ public class Activity extends AbstractDomainObject {
 		this.name = name;
 	}
 
-	public Activity(int duration, String name , boolean scheduled) {
+	public Activity(int duration, String name, boolean scheduled) {
 		super();
 		this.duration = duration;
 		this.scheduled = scheduled;
@@ -40,17 +47,27 @@ public class Activity extends AbstractDomainObject {
 	public String getName() {
 		return name;
 	}
-	
+
 	public LocalTime getStartTime() {
 		return startTime;
 	}
 	
+	
+
+	public void setDuration(int duration) {
+		this.duration = duration;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public String getStartTimeString() {
-		
-		if(startTime != null) {
-		DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("hh:mm a");
-		return startTime.format(dateTimeFormatter);
-		} else  {
+
+		if (startTime != null) {
+			DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("hh:mm a");
+			return startTime.format(dateTimeFormatter);
+		} else {
 			return new String();
 		}
 	}
@@ -58,4 +75,11 @@ public class Activity extends AbstractDomainObject {
 	public void setStartTime(LocalTime startTime) {
 		this.startTime = startTime;
 	}
+
+	@Override
+	public String toString() {
+		return "Activity [duration=" + duration + ", scheduled=" + scheduled + ", name=" + name + ", startTime="
+				+ startTime + "]";
+	}
+
 }

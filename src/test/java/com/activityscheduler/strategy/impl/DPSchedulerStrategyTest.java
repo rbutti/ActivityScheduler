@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.activityscheduler.domain.Activity;
 import com.activityscheduler.domain.ActivityCatalog;
 import com.activityscheduler.exception.SchedulerStrategyException;
 import com.activityscheduler.strategy.SchedulerStrategy;
@@ -18,9 +19,9 @@ public class DPSchedulerStrategyTest {
 		scheduler = new DPSchedulerStrategy();
 		
 		inputActivities = new ActivityCatalog();
-		inputActivities.addActivtiy("Test Activity 1", 30);
-		inputActivities.addActivtiy("Test Activity 2", 10);
-		inputActivities.addActivtiy("Test Activity 3", 20);
+		inputActivities.addActivity(new Activity(30, "Test Activity 1"));
+		inputActivities.addActivity(new Activity(10, "Test Activity 2"));
+		inputActivities.addActivity(new Activity(20, "Test Activity 3"));
 	}
 
 	@Test

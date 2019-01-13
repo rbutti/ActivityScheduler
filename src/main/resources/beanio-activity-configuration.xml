@@ -1,0 +1,14 @@
+<beanio xmlns="http://www.beanio.org/2012/03"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+	<stream name="ActivityReader" format="delimited">
+		<parser
+			class="com.activityscheduler.facade.impl.BeanIOCatalogDelimiterFactory">
+		</parser>
+		<record name="activity"
+			class="com.activityscheduler.domain.Activity">
+			<field name="name" required="true" trim="true" />
+			<field name="duration" required="true" trim="true" />
+		</record>
+	</stream>
+</beanio>

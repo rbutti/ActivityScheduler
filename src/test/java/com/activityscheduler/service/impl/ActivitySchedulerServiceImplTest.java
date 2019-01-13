@@ -6,6 +6,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.activityscheduler.domain.Activity;
 import com.activityscheduler.domain.ActivityCatalog;
 import com.activityscheduler.domain.ActivitySchedule;
 import com.activityscheduler.domain.EventInfo;
@@ -24,26 +25,26 @@ public class ActivitySchedulerServiceImplTest {
 		schedulerService = new ActivitySchedulerServiceImpl();
 
 		inputActivities = new ActivityCatalog();
-		inputActivities.addActivtiy("Duck Herding", 60);
-		inputActivities.addActivtiy("Archery", 45);
-		inputActivities.addActivtiy("Learning Magic Tricks", 40);
-		inputActivities.addActivtiy("Laser Clay Shooting", 60);
-		inputActivities.addActivtiy("Human Table Football", 30);
-		inputActivities.addActivtiy("Buggy Driving", 30);
-		inputActivities.addActivtiy("Salsa & Pickles sprint", 15);
-		inputActivities.addActivtiy("2-wheeled Segways", 45);
-		inputActivities.addActivtiy("Viking Axe Throwing", 60);
-		inputActivities.addActivtiy("Giant Puzzle Dinosaurs", 30);
-		inputActivities.addActivtiy("Giant Digital Graffiti", 60);
-		inputActivities.addActivtiy("Cricket 2020", 60);
-		inputActivities.addActivtiy("Wine Tasting sprint", 15);
-		inputActivities.addActivtiy("Arduino Bonanza", 30);
-		inputActivities.addActivtiy("Digital Tresure Hunt", 60);
-		inputActivities.addActivtiy("Enigma Challenge", 45);
-		inputActivities.addActivtiy("Monti Carlo or Bust", 55);
-		inputActivities.addActivtiy("New Zealand Haka", 30);
-		inputActivities.addActivtiy("Time Tracker sprint", 15);
-		inputActivities.addActivtiy("Indiano Drizzle", 45);
+		inputActivities.addActivity(new Activity(60, "Duck Herding"));
+		inputActivities.addActivity(new Activity(45, "Archery"));
+		inputActivities.addActivity(new Activity(40, "Learning Magic Tricks"));
+		inputActivities.addActivity(new Activity(60, "Laser Clay Shooting"));
+		inputActivities.addActivity(new Activity(30, "Human Table Football"));
+		inputActivities.addActivity(new Activity(30, "Buggy Driving"));
+		inputActivities.addActivity(new Activity(15, "Salsa & Pickles sprint"));
+		inputActivities.addActivity(new Activity(45, "2-wheeled Segways"));
+		inputActivities.addActivity(new Activity(60, "Viking Axe Throwing"));
+		inputActivities.addActivity(new Activity(30, "Giant Puzzle Dinosaurs"));
+		inputActivities.addActivity(new Activity(60, "Giant Digital Graffiti"));
+		inputActivities.addActivity(new Activity(60, "Cricket 2020"));
+		inputActivities.addActivity(new Activity(15, "Wine Tasting sprint"));
+		inputActivities.addActivity(new Activity(30, "Arduino Bonanza"));
+		inputActivities.addActivity(new Activity(60, "Digital Tresure Hunt"));
+		inputActivities.addActivity(new Activity(45, "Enigma Challenge"));
+		inputActivities.addActivity(new Activity(55, "Monti Carlo or Bust"));
+		inputActivities.addActivity(new Activity(30, "New Zealand Haka"));
+		inputActivities.addActivity(new Activity(15, "Time Tracker sprint"));
+		inputActivities.addActivity(new Activity(45, "Indiano Drizzle"));
 
 		eventInfo = new EventInfo(LocalTime.of(9, 0, 0), LocalTime.of(17, 0, 0), LocalTime.of(11, 0, 0));
 	}
@@ -72,6 +73,22 @@ public class ActivitySchedulerServiceImplTest {
 	public void testGenerateSchedule_Exception() throws SchedulerServiceException {
 
 		schedulerService.generateSchedule(inputActivities, null);
+	}
+	
+
+	@Test
+	public void testParseActivityCatalog_ValidInput() throws SchedulerServiceException {
+	
+		ActivityCatalog catalog  = schedulerService.parseActivityCatalog("src/test/resources/activities.txt");
+		Assert.assertNotNull(catalog);
+		Assert.assertEquals(21, catalog.getActivityCount());
+		Assert.assertEquals("Duck Herding", catalog.getActivity(1).getName());
+		Assert.assertEquals(60, catalog.getActivity(1).getDuration());
+		Assert.assertFalse(catalog.getActivity(1).isScheduled());
+		
+		Assert.assertEquals("Salsa & Pickles sprint", catalog.getActivity(7).getName());
+		Assert.assertEquals(15, catalog.getActivity(7).getDuration());
+		Assert.assertFalse(catalog.getActivity(7).isScheduled());
 	}
 
 }
