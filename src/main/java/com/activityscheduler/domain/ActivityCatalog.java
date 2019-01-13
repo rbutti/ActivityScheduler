@@ -3,10 +3,6 @@ package com.activityscheduler.domain;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.management.ImmutableDescriptor;
-
-import com.google.common.annotations.GwtIncompatible;
-
 public class ActivityCatalog extends AbstractDomainObject {
 
 	private static final long serialVersionUID = 3471695252714607381L;
