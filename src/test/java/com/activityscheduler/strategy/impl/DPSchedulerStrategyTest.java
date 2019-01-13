@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.activityscheduler.domain.Activity;
+import com.activityscheduler.exception.SchedulerStrategyException;
 import com.activityscheduler.strategy.SchedulerStrategy;
 
 public class DPSchedulerStrategyTest {
@@ -23,7 +24,7 @@ public class DPSchedulerStrategyTest {
 	}
 
 	@Test
-	public void testScheduler_ScheduleFor30Mins() {
+	public void testScheduler_ScheduleFor30Mins() throws SchedulerStrategyException {
 		
 		Activity[] processedActivities = scheduler.schedule(inputActivities, 30);
 
@@ -35,7 +36,7 @@ public class DPSchedulerStrategyTest {
 	}
 	
 	@Test
-	public void testScheduler_ScheduleFor70Mins() {
+	public void testScheduler_ScheduleFor70Mins() throws SchedulerStrategyException {
 		
 		Activity[] processedActivities = scheduler.schedule(inputActivities, 70);
 
@@ -47,7 +48,7 @@ public class DPSchedulerStrategyTest {
 	}
 	
 	@Test
-	public void testScheduler_ScheduleFor5Mins() {
+	public void testScheduler_ScheduleFor5Mins() throws SchedulerStrategyException {
 		
 		Activity[] processedActivities = scheduler.schedule(inputActivities, 5);
 
@@ -59,7 +60,7 @@ public class DPSchedulerStrategyTest {
 	}
 	
 	@Test
-	public void testScheduler_ScheduleFor40Mins() {
+	public void testScheduler_ScheduleFor40Mins() throws SchedulerStrategyException {
 		
 		Activity[] processedActivities = scheduler.schedule(inputActivities, 40);
 
@@ -68,5 +69,14 @@ public class DPSchedulerStrategyTest {
 		Assert.assertTrue(processedActivities[1].isScheduled());
 		Assert.assertTrue(processedActivities[2].isScheduled());
 		Assert.assertFalse(processedActivities[3].isScheduled());
+	}
+	
+	@Test(expected = SchedulerStrategyException.class)
+	public void testScheduler_ScheduleForException() throws SchedulerStrategyException {
+		
+		inputActivities[2] = null;
+		Activity[] processedActivities = scheduler.schedule(inputActivities, 40);
+
+		Assert.fail("This method should throw exception and following line should not get executed");
 	}
 }
