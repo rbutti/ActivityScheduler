@@ -30,6 +30,13 @@ public class ActivityCatalog extends AbstractDomainObject {
 
 		return activity;
 	}
+	
+	public Activity addActivtiy(Activity activity) {
+	
+		activitiesList.add(activity);
+		return activity;
+	}
+
 
 	public int getActivityCount() {
 		return activitiesList.size();

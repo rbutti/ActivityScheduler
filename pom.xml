@@ -10,6 +10,7 @@
 
 	<properties>
 		<maven-jar-plugin-version>3.1.0</maven-jar-plugin-version>
+		<maven-compiler-plugin-version>3.8.0</maven-compiler-plugin-version>
 		<junit-version>4.12</junit-version>
 		<guava-version>19.0</guava-version>
 	</properties>
@@ -33,6 +34,7 @@
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin-version}</version>
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>

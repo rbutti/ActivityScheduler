@@ -4,7 +4,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.activityscheduler.domain.Activity;
 import com.activityscheduler.domain.ActivityCatalog;
 import com.activityscheduler.exception.SchedulerStrategyException;
 import com.activityscheduler.strategy.SchedulerStrategy;
