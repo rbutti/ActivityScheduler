@@ -2,7 +2,6 @@ package com.activityscheduler.domain;
 
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.UUID;
 
 public class Activity extends AbstractDomainObject {
 

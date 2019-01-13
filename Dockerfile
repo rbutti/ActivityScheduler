@@ -4,7 +4,7 @@ MAINTAINER Ravikiran Butti <ravikiran763@gmail.com>
 COPY pom.xml /tmp/
 COPY src /tmp/src/
 WORKDIR /tmp/
-RUN mvn clean install
+RUN mvn clean package
 
 #Step 2: Create an image 
 FROM openjdk:8-jdk

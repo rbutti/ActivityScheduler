@@ -45,17 +45,19 @@ public class ActivitySchedule extends AbstractDomainObject {
 		return teams.size();
 	}
 
-	public void print() {
-		
+	public String print() {
 
+		StringBuilder scheduleOutput = new StringBuilder();
 		teams.forEach(team -> {
-			System.out.print(team.getName());
-			System.out.println(":");
+			scheduleOutput.append(team.getName());
+			scheduleOutput.append(": \n");
 		 team.getActivityCatalog().getActivities().sort(Comparator.comparing(Activity::getStartTime));
 		 team.getActivityCatalog().getActivities().forEach(activity -> {
-				System.out.println(activity.getStartTimeString() + " : " + activity.getName());
+			 scheduleOutput.append(activity.getStartTimeString() + " : " + activity.getName());
+			 scheduleOutput.append(" \n");
 			});
-			System.out.println();
+		 scheduleOutput.append(" \n");
 		});
+		return scheduleOutput.toString();
 	}
 }

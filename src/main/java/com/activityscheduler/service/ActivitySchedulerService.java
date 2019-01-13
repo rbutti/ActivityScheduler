@@ -10,5 +10,6 @@ public interface ActivitySchedulerService {
 	public ActivitySchedule generateSchedule(ActivityCatalog activityCatalog, EventInfo eventInfo) throws SchedulerServiceException;
 
 	public ActivityCatalog parseActivityCatalog(String filePath) throws SchedulerServiceException;
-
+	
+	public void printSchedule(ActivitySchedule activitySchedule) throws SchedulerServiceException;
 }
