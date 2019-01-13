@@ -31,7 +31,7 @@ public class SchedulerServiceException extends Exception {
 		this.code = code;
 	}
 
-	public ErrorCode getCode() {
+	public ErrorCode getErrorCode() {
 		return this.code;
 	}
 }

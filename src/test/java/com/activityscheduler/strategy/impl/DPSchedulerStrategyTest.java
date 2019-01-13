@@ -75,7 +75,7 @@ public class DPSchedulerStrategyTest {
 	public void testScheduler_ScheduleForException() throws SchedulerStrategyException {
 		
 		inputActivities[2] = null;
-		Activity[] processedActivities = scheduler.schedule(inputActivities, 40);
+		scheduler.schedule(inputActivities, 40);
 
 		Assert.fail("This method should throw exception and following line should not get executed");
 	}
