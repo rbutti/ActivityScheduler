@@ -19,17 +19,6 @@ public class ActivitySchedulerApplicationTest {
 		}
 	}
 
-	@Test
-	public void testMain_WithoutCommandLineArgs() throws SchedulerServiceException {
-
-		String[] args = {};
-		try {
-			ActivitySchedulerApplication.main(args);
-		} catch (SchedulerApplicationException e) {
-			Assert.fail();
-		}
-	}
-
 	@Test(expected = SchedulerApplicationException.class)
 	public void testMain_Exception() throws SchedulerApplicationException {
 

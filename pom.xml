@@ -2,26 +2,30 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>Ravikiran-Butti</groupId>
-	<artifactId>Ravikiran-Butti</artifactId>
+	<groupId>com.rbutti</groupId>
+	<artifactId>activity-scheduler</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ActivityScheduler</name>
 	<description>The solution creates a schedule that includes different teams and their schedule of activities using input data of list of activities</description>
-
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven-jar-plugin-version>3.1.0</maven-jar-plugin-version>
 		<maven-compiler-plugin-version>3.8.0</maven-compiler-plugin-version>
+		<maven-assembly-plugin-version>2.2</maven-assembly-plugin-version>
+		<maven-source-plugin-version>2.1.2</maven-source-plugin-version>
+		<maven-javadoc-plugin-version>2.8.1</maven-javadoc-plugin-version>
 		<junit-version>4.12</junit-version>
 		<beanio.version>2.1.0</beanio.version>
 		<commons-io.version>2.5</commons-io.version>
+		<commons-lang3.version>3.7</commons-lang3.version>
+		<jdk.version>1.8</jdk.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
-			<version>3.7</version>
+			<version>${commons-lang3.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -39,56 +43,90 @@
 			<artifactId>commons-io</artifactId>
 			<version>${commons-io.version}</version>
 		</dependency>
-
 	</dependencies>
 
 	<build>
 		<plugins>
 			<plugin>
+				<!-- Compiler Plugin to set JDK Compiler Configuration -->
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>${maven-compiler-plugin-version}</version>
 				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
 				</configuration>
 			</plugin>
 			<plugin>
+				<!-- JavaDoc Plugin to generate a JAR containing documentation from the 
+					project. -->
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-dependency-plugin</artifactId>
-				<version>2.1</version>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>${maven-javadoc-plugin-version}</version>
 				<executions>
 					<execution>
-						<id>copy-dependencies</id>
-						<phase>package</phase>
+						<id>attach-javadoc</id>
 						<goals>
-							<goal>copy-dependencies</goal>
+							<goal>jar</goal>
 						</goals>
 						<configuration>
-							<outputdirectory>${project.build.directory}/lib</outputdirectory>
-							<overwritereleases>false</overwritereleases>
-							<overwritesnapshots>false</overwritesnapshots>
-							<overwriteifnewer>true</overwriteifnewer>
+							<finalName>activity-scheduler</finalName>
 						</configuration>
 					</execution>
 				</executions>
 			</plugin>
 			<plugin>
-				<!-- Build an executable JAR -->
+				<!-- Source Plugin to generate a JAR containing source code from the 
+					project. -->
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<version>${maven-jar-plugin-version}</version>
-				<configuration>
-					<finalName>activity-scheduler</finalName>
-					<archive>
-						<manifest>
-							<addClasspath>true</addClasspath>
-							<classpathPrefix>dependency/</classpathPrefix>
-							<mainClass>com.activityscheduler.application.ActivitySchedulerApplication</mainClass>
-						</manifest>
-					</archive>
-				</configuration>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>${maven-source-plugin-version}</version>
+				<executions>
+					<execution>
+						<id>attach-source</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+						<configuration>
+							<finalName>activity-scheduler</finalName>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>${maven-assembly-plugin-version}</version>
+				<executions>
+					<execution>
+						<id>exe</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<finalName>activity-scheduler</finalName>
+							<attach>false</attach>
+							<appendAssemblyId>false</appendAssemblyId>
+							<descriptors>
+								<descriptor>src/main/assembly/default.xml</descriptor>
+							</descriptors>
+							<archive>
+								<manifest>
+									<mainClass>com.activityscheduler.application.ActivitySchedulerApplication</mainClass>
+								</manifest>
+							</archive>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+			<resource>
+				<directory>src/test/resources</directory>
+			</resource>
+		</resources>
 	</build>
-
 </project>

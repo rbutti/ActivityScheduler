@@ -10,6 +10,10 @@ import com.activityscheduler.service.impl.ActivitySchedulerServiceImpl;
 
 public class ActivitySchedulerApplication {
 
+	private static final String ERROR_MESSAGE = "Failed to include input activites filePath as command line argument \n"
+			+ " SYNTAX : java -jar activity-scheduler.jar [FILE PATH] \n"
+			+ " EXAMPLE: java -jar activity-scheduler.jar C:\\Users\\activities.txt \n";
+
 	public static void main(String[] args) throws SchedulerApplicationException {
 
 		ActivitySchedulerService schedulerService = new ActivitySchedulerServiceImpl();
@@ -19,10 +23,8 @@ public class ActivitySchedulerApplication {
 			if (args.length > 0) {
 				fileName = args[0];
 			} else {
-				System.out.println(
-						"NOTE : File containing list of activities is not provided as command line argument. "
-						+ "Will process a default file and provide output");
-				fileName = "src/test/resources/activities.txt";
+				System.out.println(ERROR_MESSAGE);
+				throw new SchedulerApplicationException(ERROR_MESSAGE, ErrorCode.APPLICATION_ERROR);
 			}
 			ActivityCatalog activityCatalog = schedulerService.parseActivityCatalog(fileName);
 			ActivitySchedule activitySchedule = schedulerService.generateSchedule(activityCatalog,
