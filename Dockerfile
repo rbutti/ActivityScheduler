@@ -9,5 +9,6 @@ RUN mvn clean package
 #Step 2: Create an image 
 FROM openjdk:8-jdk
 MAINTAINER Ravikiran Butti <ravikiran763@gmail.com>
-COPY /tmp/target/activity-scheduler.jar /app/activity-scheduler.jar
+VOLUME /data
+COPY target/activity-scheduler.jar /app/activity-scheduler.jar
 CMD ["java", "-jar", "/app/activity-scheduler.jar"]
