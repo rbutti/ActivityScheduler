@@ -30,6 +30,7 @@ public class ActivitySchedulerApplication {
 			ActivitySchedule activitySchedule = schedulerService.generateSchedule(activityCatalog,
 					AppConfiguration.getEventInfo());
 			schedulerService.printSchedule(activitySchedule);
+
 		} catch (Exception exception) {
 			logger.error(ErrorMessages.APPLICATION_FAILED_ERROR_MESSAGE, exception);
 		}

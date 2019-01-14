@@ -16,6 +16,7 @@ import com.activityscheduler.facade.CatalogParserFacade;
 import com.activityscheduler.facade.ScheduleWriterFacade;
 import com.activityscheduler.facade.impl.BeanIOCatalogParserFacadeImpl;
 import com.activityscheduler.facade.impl.ConsoleScheduleWriterFacadeImpl;
+import com.activityscheduler.facade.impl.FileScheduleWriterFacadeImpl;
 import com.activityscheduler.service.ActivitySchedulerService;
 import com.activityscheduler.strategy.SchedulerStrategy;
 import com.activityscheduler.strategy.impl.DPSchedulerStrategy;
@@ -24,13 +25,16 @@ public class ActivitySchedulerServiceImpl implements ActivitySchedulerService {
 
 	private SchedulerStrategy scheduler;
 	private CatalogParserFacade parserFacade;
-	private ScheduleWriterFacade writerFacade;
+	private ScheduleWriterFacade consoleWriterFacade;
+	private ScheduleWriterFacade fileWriterFacade;
 
 	public ActivitySchedulerServiceImpl() {
 		super();
 		this.scheduler = new DPSchedulerStrategy();
 		this.parserFacade = new BeanIOCatalogParserFacadeImpl();
-		this.writerFacade = new ConsoleScheduleWriterFacadeImpl();
+		this.consoleWriterFacade = new ConsoleScheduleWriterFacadeImpl();
+		this.fileWriterFacade = new FileScheduleWriterFacadeImpl();
+
 	}
 
 	@Override
@@ -71,7 +75,7 @@ public class ActivitySchedulerServiceImpl implements ActivitySchedulerService {
 
 	@Override
 	public ActivityCatalog parseActivityCatalog(String filePath) throws SchedulerServiceException {
-		
+
 		try {
 			return parserFacade.parseActivityCatalog(filePath);
 		} catch (SchedulerFacadeException facadeException) {
@@ -85,9 +89,11 @@ public class ActivitySchedulerServiceImpl implements ActivitySchedulerService {
 
 	@Override
 	public void printSchedule(ActivitySchedule activitySchedule) throws SchedulerServiceException {
-		
+
 		try {
-			writerFacade.printSchedule(activitySchedule);
+			
+			consoleWriterFacade.printSchedule(activitySchedule);
+			fileWriterFacade.printSchedule(activitySchedule);
 		} catch (SchedulerFacadeException facadeException) {
 			throw new SchedulerServiceException("Failed to read activities from input file", facadeException,
 					ErrorCode.FACADE_ERROR);
@@ -95,7 +101,7 @@ public class ActivitySchedulerServiceImpl implements ActivitySchedulerService {
 			throw new SchedulerServiceException("Unexpected Error occured while reading form the input file", exception,
 					ErrorCode.UNEXPECTED_ERROR);
 		}
-		
+
 	}
 
 }
