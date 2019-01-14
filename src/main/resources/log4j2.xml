@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN">
-    <Properties>
-        <Property name="logPath">target/activity-scheduler-logs</Property>
-        <Property name="rollingFileName">activity-scheduler</Property>
-    </Properties>
-    <Appenders>
-        <Console name="console" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
-        </Console>
-    </Appenders>
-    <Loggers>
-        <Root level="DEBUG" additivity="false">
-            <AppenderRef ref="console" />
-        </Root>
-    </Loggers>
+	<!-- Currently this log file is only configured to log on console and can be extended to a log file-->
+	<Appenders>
+		<Console name="console" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+		</Console>
+	</Appenders>
+	<Loggers>
+		<Root level="DEBUG" additivity="false">
+			<AppenderRef ref="console" />
+		</Root>
+	</Loggers>
 </Configuration>

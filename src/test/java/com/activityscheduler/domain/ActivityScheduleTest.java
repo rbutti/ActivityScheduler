@@ -13,7 +13,7 @@ public class ActivityScheduleTest {
 	
 	@Before
 	public void before() {
-		eventInfo = new EventInfo(LocalTime.of(8, 0, 0), LocalTime.of(16, 0, 0), LocalTime.of(11, 0, 0));
+		eventInfo = new DeloitteAwayDayEventInfo(LocalTime.of(8, 0, 0), LocalTime.of(16, 0, 0), LocalTime.of(11, 0, 0));
 	}
 
 	@Test

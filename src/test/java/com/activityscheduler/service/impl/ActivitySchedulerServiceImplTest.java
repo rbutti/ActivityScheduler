@@ -9,6 +9,7 @@ import org.junit.Test;
 import com.activityscheduler.domain.Activity;
 import com.activityscheduler.domain.ActivityCatalog;
 import com.activityscheduler.domain.ActivitySchedule;
+import com.activityscheduler.domain.DeloitteAwayDayEventInfo;
 import com.activityscheduler.domain.EventInfo;
 import com.activityscheduler.exception.SchedulerServiceException;
 import com.activityscheduler.service.ActivitySchedulerService;
@@ -46,7 +47,7 @@ public class ActivitySchedulerServiceImplTest {
 		inputActivities.addActivity(new Activity(15, "Time Tracker sprint"));
 		inputActivities.addActivity(new Activity(45, "Indiano Drizzle"));
 
-		eventInfo = new EventInfo(LocalTime.of(9, 0, 0), LocalTime.of(17, 0, 0), LocalTime.of(11, 0, 0));
+		eventInfo = new DeloitteAwayDayEventInfo(LocalTime.of(9, 0, 0), LocalTime.of(17, 0, 0), LocalTime.of(11, 0, 0));
 	}
 	
 	@Test
@@ -65,7 +66,7 @@ public class ActivitySchedulerServiceImplTest {
 	@Test(expected=SchedulerServiceException.class)
 	public void testGenerateSchedule_ScheduleStrategyException() throws SchedulerServiceException {
 		
-		eventInfo = new EventInfo(LocalTime.of(9, 0, 0), LocalTime.of(4, 0, 0), LocalTime.of(11, 0, 0));
+		eventInfo = new DeloitteAwayDayEventInfo(LocalTime.of(9, 0, 0), LocalTime.of(4, 0, 0), LocalTime.of(11, 0, 0));
 		schedulerService.generateSchedule(inputActivities, eventInfo);
 	}
 	

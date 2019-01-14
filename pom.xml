@@ -7,6 +7,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ActivityScheduler</name>
 	<description>The solution creates a schedule that includes different teams and their schedule of activities using input data of list of activities</description>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven-jar-plugin-version>3.1.0</maven-jar-plugin-version>
@@ -29,10 +30,9 @@
 			<version>${commons-lang3.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>${junit-version}</version>
-			<scope>test</scope>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>${commons-io.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.beanio</groupId>
@@ -40,9 +40,10 @@
 			<version>${beanio.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>commons-io</groupId>
-			<artifactId>commons-io</artifactId>
-			<version>${commons-io.version}</version>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit-version}</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
@@ -110,6 +111,7 @@
 				</executions>
 			</plugin>
 			<plugin>
+				<!-- Assembly Plugin to generate a executable fat jar from the project. -->
 				<artifactId>maven-assembly-plugin</artifactId>
 				<version>${maven-assembly-plugin-version}</version>
 				<executions>
