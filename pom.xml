@@ -53,6 +53,26 @@
 				</configuration>
 			</plugin>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.1</version>
+				<executions>
+					<execution>
+						<id>copy-dependencies</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<outputdirectory>${project.build.directory}/lib</outputdirectory>
+							<overwritereleases>false</overwritereleases>
+							<overwritesnapshots>false</overwritesnapshots>
+							<overwriteifnewer>true</overwriteifnewer>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
 				<!-- Build an executable JAR -->
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
@@ -62,7 +82,7 @@
 					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>
-							<classpathPrefix>lib/</classpathPrefix>
+							<classpathPrefix>dependency/</classpathPrefix>
 							<mainClass>com.activityscheduler.application.ActivitySchedulerApplication</mainClass>
 						</manifest>
 					</archive>
