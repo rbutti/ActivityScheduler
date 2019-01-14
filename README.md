@@ -141,5 +141,30 @@ Team 2:
 C:\Users\rbutti\git\ActivityScheduler2\deliverables>
 ```
 
+### Technical Design
 
+##### Project Structure
+
+![Project Structure](https://github.com/rbutti/ActivityScheduler/blob/master/deliverables/ProjectStructure.PNG "Project Structure")
+
+##### Package Structure
+
+| Package | Summary |
+| ------ | ------ |
+| com.activityscheduler.application | contains application entrypoint classes |
+| com.activityscheduler.constant | contains constants  |
+| com.activityscheduler.domain | contains all the domain classes  |
+| com.activityscheduler.exception | contains custom application exceptions |
+| com.activityscheduler.facade| intefaces for facade classes |
+| com.activityscheduler.facade.impl | implementation of facade classes |
+| com.activityscheduler.service| intefaces for service classes  |
+| com.activityscheduler.service.impl | implementation for service classes |
+| com.activityscheduler.strategy| intefaces for strategy classes  |
+| com.activityscheduler.strategy.impl | implementation for strategy classes |
+
+
+### Contact Information
+
+Author : Ravikiran Butti
+Email Id : (ravikiran763@gmail.com)
 
