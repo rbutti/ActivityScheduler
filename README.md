@@ -162,9 +162,21 @@ C:\Users\rbutti\git\ActivityScheduler2\deliverables>
 | com.activityscheduler.strategy| intefaces for strategy classes  |
 | com.activityscheduler.strategy.impl | implementation for strategy classes |
 
+##### Domains
+
+| Package | Summary |
+| ------ | ------ |
+| AbstractDomainObject.java | Abstact class implemented by all Domain objects in the application|
+| Activity.java | Represents the activity that needs to be scheduled for an event |
+| ActivityCatalog.java | A catalog of all the activities that needs to be scheduled for an event |
+| ActivitySchedule.java | Schedule of Activities |
+| EventInfo.java| Holds information regarding a particular event |
+| DeloitteAwayDayEventInfo.java | Extends EventInfo and holds information specific to "Deloitte Away Day Event" |
+| Team | Represents a team created for an event  |
+
 
 ### Contact Information
 
-Author : Ravikiran Butti
+Author : Ravikiran Butti,
 Email Id : (ravikiran763@gmail.com)
 
