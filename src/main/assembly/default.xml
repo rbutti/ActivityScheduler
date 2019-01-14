@@ -7,6 +7,7 @@
 	<id>exe</id>
 	<formats>
 		<format>jar</format>
+		<format>zip</format>
 	</formats>
 	<includeBaseDirectory>false</includeBaseDirectory>
 	<dependencySets>
@@ -16,4 +17,10 @@
 			<scope>runtime</scope>
 		</dependencySet>
 	</dependencySets>
+	<fileSets>
+    <fileSet>
+      <directory>${project.build.directory}/apidocs</directory>
+      <outputDirectory>/</outputDirectory>
+    </fileSet>
+  </fileSets>
 </assembly>
