@@ -2,8 +2,9 @@ package com.activityscheduler.exception;
 
 /**
  * The ActivitySchedulerStrategyException wraps all checked standard Java
- * exception and enriches them with a custom error code. You can use this code
- * to retrieve localized error messages and to link to our online documentation.
+ * exception and enriches them with a custom error code.
+ * <p>
+ * This exception will be throw from application strategy layer
  * 
  */
 public class SchedulerStrategyException extends Exception {
@@ -33,5 +34,10 @@ public class SchedulerStrategyException extends Exception {
 
 	public ErrorCode getErrorCode() {
 		return this.code;
+	}
+
+	@Override
+	public String toString() {
+		return "[code=" + code + "] | " + super.toString();
 	}
 }

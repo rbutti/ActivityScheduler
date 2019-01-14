@@ -1,12 +1,11 @@
 package com.activityscheduler.exception;
 
 /**
- * The ActivitySchedulerStrategyException wraps all checked standard Java
- * exception and enriches them with a custom error code. You can use this code
- * to retrieve localized error messages and to link to our online documentation.
- * 
+ * The SchedulerApplicationException wraps all checked standard Java exception
+ * and enriches them with a custom error code.
  */
 public class SchedulerApplicationException extends Exception {
+
 	private static final long serialVersionUID = 7718828512143293558L;
 
 	private final ErrorCode code;
@@ -34,4 +33,9 @@ public class SchedulerApplicationException extends Exception {
 	public ErrorCode getErrorCode() {
 		return this.code;
 	}
+
+	@Override
+	public String toString() {
+		return "[code=" + code + "] | " + super.toString();
+	}	
 }

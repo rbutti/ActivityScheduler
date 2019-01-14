@@ -1,6 +1,9 @@
+<!-- A BeanIO configuration file for marshalling and unmarshalling the data -->
 <beanio xmlns="http://www.beanio.org/2012/03"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+
+	<!-- Stream to read activities from the file -->
 	<stream name="ActivityReader" format="delimited">
 		<parser
 			class="com.activityscheduler.facade.impl.BeanIOCatalogDelimiterFactory">

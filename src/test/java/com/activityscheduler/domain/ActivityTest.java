@@ -56,6 +56,6 @@ public class ActivityTest {
 
 		Activity activity = new Activity(testDuration, testName);
 		activity.setStartTime(LocalTime.of(9,0,0));
-		Assert.assertEquals("09:00 AM", activity.getStartTimeString());
+		Assert.assertEquals("09:00 AM", activity.getFormattedStartedTime());
 	}
 }
