@@ -14,9 +14,9 @@ import com.activityscheduler.strategy.SchedulerStrategy;
 /**
  * A strategy implementation of the {@linkplain SchedulerStrategy} interface.
  * This implementation uses Dynamic
- * Programming{@link https://en.wikipedia.org/wiki/Dynamic_programming} to
+ * Programming https://en.wikipedia.org/wiki/Dynamic_programming to
  * determine the schedule and is variation of the famous knapsack
- * programme.<br/>
+ * programme.<p>
  * This Strategy is designed to able to fit maximum activities to a given time
  * period/duration
  * 

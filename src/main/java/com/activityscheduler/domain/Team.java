@@ -51,7 +51,7 @@ public class Team extends AbstractDomainObject {
 
 	/**
 	 * This helper method adds the input activity to the team's catalog
-	 * 
+	 * @param activity : Activity to add
 	 * @return : true if the addition is successful or else false
 	 */
 	public boolean addActivity(Activity activity) {
@@ -64,7 +64,7 @@ public class Team extends AbstractDomainObject {
 	 * This helper method adds all the input activities to the team's catalog and
 	 * sets the start time of the activity based on scheduled end time of the last
 	 * activity
-	 * 
+	 * @param activities : List of Activities to add
 	 * @return : true if the addition is successful or else false
 	 */
 	public boolean addScheduledActivities(List<Activity> activities) {

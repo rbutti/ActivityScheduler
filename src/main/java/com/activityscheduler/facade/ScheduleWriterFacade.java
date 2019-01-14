@@ -5,7 +5,7 @@ import com.activityscheduler.exception.SchedulerFacadeException;
 
 /**
  * Facade interface for writing activity schedule to a source in a human
- * readable format <br/>
+ * readable format <p>
  * Concrete implementation of this interface should implement logic to write the
  * activity schedule to a source in an human readable format
  * 
@@ -19,7 +19,7 @@ public interface ScheduleWriterFacade {
 	 * activity schedule to a source in an human readable format
 	 * 
 	 * @param activitySchedule - Activity schedule to be written to a source
-	 * @throws SchedulerFacadeException
+	 * @throws SchedulerFacadeException : Facade Exception
 	 */
 	public void printSchedule(ActivitySchedule activitySchedule) throws SchedulerFacadeException;
 }

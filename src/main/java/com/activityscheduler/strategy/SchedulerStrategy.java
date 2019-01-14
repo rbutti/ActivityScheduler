@@ -21,7 +21,7 @@ public interface SchedulerStrategy {
 	 * @param activities       - Catalog of activities to be scheduled
 	 * @param scheduleDuration - Duration of schedule
 	 * @return - Schedule for activities for input duration
-	 * @throws SchedulerStrategyException
+	 * @throws SchedulerStrategyException : Strategy exception
 	 */
 	public ActivityCatalog schedule(ActivityCatalog activities, int scheduleDuration) throws SchedulerStrategyException;
 }

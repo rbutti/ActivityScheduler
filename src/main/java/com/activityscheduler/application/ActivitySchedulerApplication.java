@@ -20,7 +20,7 @@ import com.activityscheduler.service.impl.ActivitySchedulerServiceImpl;
  * <ul>
  * <li>The catalog of activities for the event will be read from an input file.
  * Input file format :
- * {@linkplain: https://github.com/rbutti/ActivityScheduler/blob/master/src/test/resources/activities.txt}
+ * https://github.com/rbutti/ActivityScheduler/blob/master/src/test/resources/activities.txt
  * <li>The employees will be divided into various teams and each team will be
  * performing various activities in a day
  * <li>Output will be printed on console and to a file generate in the same
@@ -37,7 +37,7 @@ import com.activityscheduler.service.impl.ActivitySchedulerServiceImpl;
  * </ul>
  * 
  * <p>
- * USAGE: java -jar activity-scheduler.jar [FILE PATH] <br/>
+ * USAGE: java -jar activity-scheduler.jar [FILE PATH] <p>
  * EXAMPLE: java -jar activity-scheduler.jar C:\\Users\\activities.txt
  * 
  * <p>
@@ -48,7 +48,6 @@ import com.activityscheduler.service.impl.ActivitySchedulerServiceImpl;
  * </ul>
  * 
  * @author ravikiran763 (ravikiran763@gmail.com)
- * @see {@linkplain: https://github.com/rbutti/ActivityScheduler }
  *
  */
 public class ActivitySchedulerApplication {

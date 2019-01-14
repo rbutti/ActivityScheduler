@@ -5,7 +5,7 @@ import com.activityscheduler.exception.SchedulerFacadeException;
 
 /**
  * Facade interface for reading activities from the source and parsing them to a
- * Activity Catalog.<br/>
+ * Activity Catalog.<p>
  * Concrete implementation of this interface should implement logic to read
  * activities from a source and construct a Catalog of all the activities
  * 
@@ -20,7 +20,7 @@ public interface CatalogParserFacade {
 	 * 
 	 * @param fileName - File containing a list of activities to be read
 	 * @return - An Activity Catalog containing list of activities
-	 * @throws SchedulerFacadeException
+	 * @throws SchedulerFacadeException : Facade Exception
 	 */
 	public ActivityCatalog parseActivityCatalog(String fileName) throws SchedulerFacadeException;
 

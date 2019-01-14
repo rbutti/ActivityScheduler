@@ -30,7 +30,7 @@ public class DeloitteAwayDayEventInfo extends EventInfo {
 	 * An helper method to run the Lunch Activity for Deloitte Digital Away Day
 	 * event
 	 * 
-	 * @return
+	 * @return - Lunch Activity
 	 */
 	public Activity getLunchActivity() {
 		Activity activity = new Activity(60, DeloitteAwayDayEventInfo.MANDATORY_LUNCH_BREAK, true);

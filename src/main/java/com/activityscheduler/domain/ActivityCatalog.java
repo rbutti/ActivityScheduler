@@ -54,6 +54,7 @@ public class ActivityCatalog extends AbstractDomainObject {
 	 * This helper method adds all the input activities to the catalog. It doesnt
 	 * override any of the existing information
 	 * 
+	 * @param activities - Activities to be added
 	 * @return : true if the addition is successful or else false
 	 */
 	public boolean addAllActivities(List<Activity> activities) {
@@ -63,6 +64,7 @@ public class ActivityCatalog extends AbstractDomainObject {
 	/**
 	 * This helper method adds the input activity to the catalog
 	 * 
+	 * @param activity - Activity to be added
 	 * @return : true if the addition is successful or else false
 	 */
 	public boolean addActivity(Activity activity) {
@@ -80,7 +82,7 @@ public class ActivityCatalog extends AbstractDomainObject {
 
 	/**
 	 * This helper method returns the activity at a given index in the catalog
-	 * 
+	 * @param index - Activity index
 	 * @return : Count of all the activities in the catalog
 	 */
 	public Activity getActivity(int index) {

@@ -5,7 +5,7 @@ import java.util.UUID;
 
 /**
  * An Abstract class for Domain objects. This class assigns an unique Id to all
- * the domain objects and makes them serializable.<br/>
+ * the domain objects and makes them serializable.<p>
  * The unique Id is generated using java's UUID generator.
  * 
  * @author rbutti

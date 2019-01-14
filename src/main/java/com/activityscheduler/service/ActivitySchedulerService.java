@@ -6,7 +6,7 @@ import com.activityscheduler.domain.EventInfo;
 import com.activityscheduler.exception.SchedulerServiceException;
 
 /**
- * Service interface for Activity Scheduler Application.<br/>
+ * Service interface for Activity Scheduler Application.<p>
  * Concrete implementation of this interface should implement logic to read
  * activities from a file, generate a schedule and print the schedule
  * 
@@ -24,7 +24,7 @@ public interface ActivitySchedulerService {
 	 * @param eventInfo       - Event information containing start and end time of
 	 *                        the event and any event specific information
 	 * @return Schedule of Activities for the event
-	 * @throws SchedulerServiceException
+	 * @throws SchedulerServiceException : Service Exception
 	 */
 	public ActivitySchedule generateSchedule(ActivityCatalog activityCatalog, EventInfo eventInfo)
 			throws SchedulerServiceException;
@@ -35,7 +35,7 @@ public interface ActivitySchedulerService {
 	 * 
 	 * @param filePath - Path to the file containing list of activities
 	 * @return A catalog of all the activities that needs to be scheduled
-	 * @throws SchedulerServiceException
+	 * @throws SchedulerServiceException : Service Exception
 	 */
 	public ActivityCatalog parseActivityCatalog(String filePath) throws SchedulerServiceException;
 
@@ -44,7 +44,7 @@ public interface ActivitySchedulerService {
 	 * human understandable format
 	 * 
 	 * @param activitySchedule - Schedule of activities to be printed
-	 * @throws SchedulerServiceException
+	 * @throws SchedulerServiceException : Service Exception
 	 */
 	public void printSchedule(ActivitySchedule activitySchedule) throws SchedulerServiceException;
 }
