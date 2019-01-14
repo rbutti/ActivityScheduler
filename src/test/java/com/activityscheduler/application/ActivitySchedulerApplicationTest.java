@@ -18,11 +18,4 @@ public class ActivitySchedulerApplicationTest {
 			Assert.fail();
 		}
 	}
-
-	@Test(expected = SchedulerApplicationException.class)
-	public void testMain_Exception() throws SchedulerApplicationException {
-
-		ActivitySchedulerApplication.main(null);
-
-	}
 }
