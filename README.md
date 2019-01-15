@@ -185,8 +185,8 @@ C:\Users\rbutti\git\ActivityScheduler2\deliverables>
 | BeanIOCatalogParserFacadeImpl.java | An implementation of CatalogParserFacade interface that contains necessary logic to read an input activities file, unmarshals it into an Activity object and returns a catalog of all the activities found in the file. |
 | ConsoleScheduleWriterFacadeImpl.java |An implementation of the interface ScheduleWriterFacade. This implementation writes the Activity Schedule to an console |
 | FileScheduleWriterFacadeImpl.java| An implementation of the interface ScheduleWriterFacade. This implementation writes the Activity Schedule to an file. The file will be generated in the same location as the application jar |
-| DPSchedulerStrategy.java | A strategy implementation of the SchedulerStrategy interface. This implementation uses Dynamic Programming https://en.wikipedia.org/wiki/Dynamic_programming to determine the schedule and is variation of the famous knapsack programme.
-This Strategy is designed to able to fit maximum activities to a given time period/duration |
+| DPSchedulerStrategy.java | A strategy implementation of the SchedulerStrategy interface. This implementation uses Dynamic Programming https://en.wikipedia.org/wiki/Dynamic_programming to determine the schedule and is variation of the famous knapsack program. This Strategy is designed to able to fit maximum activities to a given time period/duration
+ |
 
 
 ### Contact Information
