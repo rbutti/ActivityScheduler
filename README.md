@@ -204,6 +204,13 @@ The Javadoc for the application can be found at the below location
 Below is the latest code coverage report generated on 14th Jan 2019
 ![Code Coverage](https://github.com/rbutti/ActivityScheduler/blob/master/deliverables/CodeCoverageReport.PNG "Code Coverage Report")
 
+### Future Enhancements
+
+* Implement factory pattern to create service, factory and strategy object for better scalability
+* Containerize the application using docker
+* Refactor to create a client module consisting of domain and interfaces 
+* Stress test the application against new event requirements
+
 
 ### Contact Information
 
