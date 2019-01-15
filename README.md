@@ -38,9 +38,13 @@ The deliverables for the application can be found at the below location
 
 | Deliverable | Summary |
 | ------ | ------ |
+| ClassDiagram.PNG |Class diagram of the application |
+| ProjectStructure.PNG |Diagram depicting the project structure |
 | CodeCoverageReport.PNG | Contains the latest junit code coverage report of the project|
+| Technical Design Document.pdf| Technical Design Document for the application |
 | Requirement Specification.pdf | Requirement Specification for "Deloitte Digital Away Day Event" |
 | activities.txt | Sample input text file |
+| activity-schedule-output.txt | Sample output text file |
 | activity-scheduler-javadoc.zip | Javadoc for the project |
 | activity-scheduler.jar | Executable "Activity Scheduler Application" |
 
@@ -103,6 +107,8 @@ $ cd [PATH TO APPLICATION FOLDER]\deliverables
 ```sh
 $ java -jar activity-scheduler.jar [INPUT FILE PATH]
 ```
+
+* The output will be printed on the termial as well as to a output file with name "activity-scheduler-output.txt" in the folder "activity-scheduler\deliverables"
 
 ##### Example
 
