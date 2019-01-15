@@ -24,7 +24,7 @@ public final class AppConfiguration {
 	public static final String BEANIO_ACTIVITY_READER = "ActivityReader";
 
 	// Name of the output next file
-	public static final String SCHEDULE_OUTPUT_FILE = "./activity-schedule.txt";
+	public static final String SCHEDULE_OUTPUT_FILE = "./activity-scheduler-output.txt";
 	
 	// Application's Default Time format
 	public static final String DEFAULT_TIME_FORMAT = "hh:mm a";
