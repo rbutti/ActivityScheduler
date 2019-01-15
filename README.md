@@ -207,6 +207,6 @@ Below is the latest code coverage report generated on 14th Jan 2019
 
 ### Contact Information
 
-Author : Ravikiran Butti,
-Email Id : (ravikiran763@gmail.com)
+**Author** : Ravikiran Butti,
+**Email Id** : (ravikiran763@gmail.com)
 
