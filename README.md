@@ -164,7 +164,7 @@ C:\Users\rbutti\git\ActivityScheduler2\deliverables>
 
 ##### Domains
 
-| Package | Summary |
+| Class | Summary |
 | ------ | ------ |
 | AbstractDomainObject.java | Abstact class implemented by all Domain objects in the application|
 | Activity.java | Represents the activity that needs to be scheduled for an event |
@@ -173,6 +173,20 @@ C:\Users\rbutti\git\ActivityScheduler2\deliverables>
 | EventInfo.java| Holds information regarding a particular event |
 | DeloitteAwayDayEventInfo.java | Extends EventInfo and holds information specific to "Deloitte Away Day Event" |
 | Team | Represents a team created for an event  |
+
+##### Class Design
+
+![Class Diagram](https://github.com/rbutti/ActivityScheduler/blob/master/deliverables/ClassDiagram.PNG "Class Diagram")
+
+| Class | Summary |
+| ------ | ------ |
+| ActivitySchedulerApplication.java | Entrypoint to the Application consisting main() method|
+| ActivitySchedulerServiceImpl.java | An implementation of ActivitySchedulerService interface. This class implements logic to read activities from a file, generate a schedule and print the schedule on an console and to a file |
+| BeanIOCatalogParserFacadeImpl.java | An implementation of CatalogParserFacade interface that contains necessary logic to read an input activities file, unmarshals it into an Activity object and returns a catalog of all the activities found in the file. |
+| ConsoleScheduleWriterFacadeImpl.java |An implementation of the interface ScheduleWriterFacade. This implementation writes the Activity Schedule to an console |
+| FileScheduleWriterFacadeImpl.java| An implementation of the interface ScheduleWriterFacade. This implementation writes the Activity Schedule to an file. The file will be generated in the same location as the application jar |
+| DPSchedulerStrategy.java | A strategy implementation of the SchedulerStrategy interface. This implementation uses Dynamic Programming https://en.wikipedia.org/wiki/Dynamic_programming to determine the schedule and is variation of the famous knapsack programme.
+This Strategy is designed to able to fit maximum activities to a given time period/duration |
 
 
 ### Contact Information
