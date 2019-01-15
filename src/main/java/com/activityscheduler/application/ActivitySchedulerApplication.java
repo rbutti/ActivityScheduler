@@ -40,15 +40,7 @@ import com.activityscheduler.service.impl.ActivitySchedulerServiceImpl;
  * USAGE: java -jar activity-scheduler.jar [FILE PATH] <p>
  * EXAMPLE: java -jar activity-scheduler.jar C:\\Users\\activities.txt
  * 
- * <p>
- * Current implementation supports scheduling of activities for the following
- * event
- * <ul>
- * <li>Deloitte Digital Away Day
- * </ul>
- * 
  * @author ravikiran763 (ravikiran763@gmail.com)
- *
  */
 public class ActivitySchedulerApplication {
 
