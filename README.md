@@ -206,7 +206,7 @@ Below is the latest code coverage report generated on 14th Jan 2019
 
 ### Future Enhancements
 
-* Implement factory pattern to create service, factory and strategy object for better scalability
+* Implement factory pattern to create service, facade and strategy object for better scalability
 * Containerize the application using docker
 * Refactor to create a client module consisting of domain and interfaces 
 * Stress test the application against new event requirements
