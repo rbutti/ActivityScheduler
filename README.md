@@ -193,6 +193,12 @@ C:\Users\rbutti\git\ActivityScheduler2\deliverables>
 The Javadoc for the application can be found at the below location
 [Activity Scheduler Application](https://github.com/rbutti/ActivityScheduler/blob/master/deliverables/activity-scheduler-javadoc.zip)
 
+### Code Coverage
+
+Below is the latest code coverage report generated on 14th Jan 2019
+![Code Coverage](https://github.com/rbutti/ActivityScheduler/blob/master/deliverables/CodeCoverageReport.PNG "Code Coverage Report")
+
+
 ### Contact Information
 
 Author : Ravikiran Butti,
