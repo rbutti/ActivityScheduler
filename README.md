@@ -19,7 +19,7 @@ Activity Scheduler Application uses the following tools and technologies:
 
 | Technology | Version |
 | ------ | ------ |
-| JDK | 1.0 |
+| JDK | 1.8 |
 | BeanIO | 2.1.0 |
 | commons-io | 2.5 |
 | Log4j | 2.7 |
