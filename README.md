@@ -64,8 +64,8 @@ Please follow the instructions in the link for the setup
 * Click on the below link to download the Activity Scheduler Application
 [Activity Scheduler Application](https://github.com/rbutti/ActivityScheduler/archive/master.zip)
 * unzip the application to the folder of your choice.
-* After you unzip the application, inside the activity-scheduler/deliverables folder you will find application executable with the name "activity-scheduler.jar"
-* A sample input file for the application is also provided in the activity-scheduler/deliverables folder. 
+* After you unzip the application, inside the [PATH TO APPLICATION]/ActivityScheduler-master/deliverables folder you will find application executable with the name "activity-scheduler.jar"
+* A sample input file for the application is also provided in the [PATH TO APPLICATION]/ActivityScheduler-master/deliverables folder. 
 Below is the allowed format of activities in the file
 
 | Type | Format | Example |
@@ -98,7 +98,7 @@ Indiano Drizzle 45min
 ```
 ### Execution
 
-* Open a terminal and navigate to the "activity-scheduler\deliverables" folder
+* Open a terminal and navigate to the "[PATH TO APPLICATION]\ActivityScheduler-master\deliverables" folder
 ```sh
 $ cd [PATH TO APPLICATION FOLDER]\deliverables
 ```
@@ -108,7 +108,7 @@ $ cd [PATH TO APPLICATION FOLDER]\deliverables
 $ java -jar activity-scheduler.jar [INPUT FILE PATH]
 ```
 
-* The output will be printed on the termial as well as to a output file with name "activity-scheduler-output.txt" in the folder "activity-scheduler\deliverables"
+* The output will be printed on the termial as well as to a output file with name "activity-scheduler-output.txt" in the folder "[PATH TO APPLICATION]\ActivityScheduler-master\deliverables"
 
 ##### Example
 
